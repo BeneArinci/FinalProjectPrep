@@ -1,14 +1,15 @@
 import Input from './input.js';
 
 
-var button = document.getElementById("enter");
+var btnEnterMove = document.getElementById("enter");
 var userInput = document.getElementById("userinput")
 var list = document.querySelector("ul")
 
+var btnDeleteMoves = document.getElementById("delete");
+
 var input = new Input()
 
-
-button.addEventListener("click", function(){
+btnEnterMove.addEventListener("click", function(){
 
   if (userInput.value === "player.moveRight()") {
     input.addInput("player.moveRight()")
@@ -21,3 +22,8 @@ button.addEventListener("click", function(){
     alert("Wrong move, try again")
   }
 })
+
+
+btnDeleteMoves.addEventListener("click", function(){
+  input.restore()
+});

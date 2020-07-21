@@ -8,5 +8,8 @@ export default class Input {
     this.inputs.push(value)
   };
 
+  restore(){
+    this.inputs = [];
+  };
 
 }
