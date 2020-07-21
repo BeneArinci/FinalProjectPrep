@@ -12,8 +12,12 @@ let player = new Player(GAME_HEIGHT, GAME_WIDTH);
 let lastTime = 0;
 
 // plaaceholder data
-let mockData = ['moveRight()', 'moveRight()', 'moveRight()']
-player.start(mockData)
+let mockData = [
+  "player.moveRight()",
+  "player.moveRight()",
+  "player.moveRight()",
+];
+player.start(mockData);
 
 function gameLoop(timestamp) {
   let deltaTime = timestamp - lastTime;

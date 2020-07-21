@@ -16,8 +16,6 @@ export default class Player {
       x: 30,
       y: 30,
     };
-    //placeholder just to test block moving in steps
-    this.time = 0;
   }
 
   draw(ctx) {
@@ -29,20 +27,27 @@ export default class Player {
   }
 
   moveRight() {
-    //placeholder just to test block moving in steps
-    setTimeout(() => {
-      this.position.x += this.movement.x;
-    }, this.time);
-    this.time += 1000;
+    this.position.x += this.movement.x;
   }
 
   // placeholder function
   start(mockData) {
-    let moveCounter = 0;
-    setInterval(() => {
-      console.log(moveCounter)
-      moveCounter++
-      if (moveCounter > mockData.length) clearInterval(start);
-    }, 1000)
+    let i = 0;
+    let interval = setInterval(() => {
+      this._loop(mockData[i]);
+      i++;
+      if (i === mockData.length) clearInterval(interval);
+    }, 1000);
+  }
+
+  _loop(input) {
+    switch (input) {
+      case "player.moveRight()":
+        this.moveRight();
+        break;
+      case "player.moveLeft()":
+        console.log("left");
+        break;
+    }
   }
 }
