@@ -16,6 +16,7 @@ button.addEventListener("click", function(){
     li.appendChild(document.createTextNode(userInput.value))
     list.appendChild(li)
     console.log(input);
+    userInput.value = ""
   } else {
     alert("Wrong move, try again")
   }
