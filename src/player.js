@@ -16,6 +16,8 @@ export default class Player {
       x: 30,
       y: 30,
     };
+    //placeholder just to test block moving in steps
+    this.time = 0;
   }
 
   draw(ctx) {
@@ -27,6 +29,10 @@ export default class Player {
   }
 
   moveRight() {
-    this.position.x += this.movement.x;
+    //placeholder just to test block moving in steps
+    setTimeout(() => {
+      this.position.x += this.movement.x;
+    }, this.time);
+    this.time += 1000;
   }
 }

@@ -21,4 +21,5 @@ function gameLoop(timestamp) {
 
   requestAnimationFrame(gameLoop);
 }
+let input = [player.moveRight(), player.moveRight(), player.moveRight()];
 gameLoop();
