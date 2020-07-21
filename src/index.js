@@ -1,3 +1,6 @@
+import Input from './input.js';
+
+
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput")
 
