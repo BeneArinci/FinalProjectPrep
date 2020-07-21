@@ -26,4 +26,6 @@ btnEnterMove.addEventListener("click", function(){
 
 btnDeleteMoves.addEventListener("click", function(){
   input.restore()
+  list.innerHTML = '';
+  console.log(input.inputs)
 });
