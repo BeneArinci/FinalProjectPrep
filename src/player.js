@@ -16,6 +16,14 @@ export default class Player {
       x: 30,
       y: 30,
     };
+    // object velocaity
+    this.vel = {
+      x: 0,
+      y: 0
+    }
+    
+    // speed
+    this.speed = 10;
   }
 
   draw(ctx) {
@@ -24,14 +32,18 @@ export default class Player {
 
   update(deltaTime) {
     if (!deltaTime) return;
+    this.position.x +=  this.vel.x;
+    this.vel.x *= 0.65;
   }
 
   moveRight() {
-    this.position.x += this.movement.x;
+    //this.position.x += this.movement.x;
+    this.vel.x = this.speed;
   }
 
   moveLeft() {
-    this.position.x -= this.movement.x;
+    //this.position.x -= this.movement.x;
+    this.vel.x = -this.speed;
   }
 
   // placeholder function
