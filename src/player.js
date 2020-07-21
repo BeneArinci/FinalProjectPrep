@@ -30,6 +30,10 @@ export default class Player {
     this.position.x += this.movement.x;
   }
 
+  moveLeft() {
+    this.position.x -= this.movement.x;
+  }
+
   // placeholder function
   start(mockData) {
     let i = 0;
@@ -46,7 +50,7 @@ export default class Player {
         this.moveRight();
         break;
       case "player.moveLeft()":
-        console.log("left");
+        this.moveLeft();
         break;
     }
   }
