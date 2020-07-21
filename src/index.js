@@ -11,6 +11,10 @@ const GAME_WIDTH = canvas.width;
 let player = new Player(GAME_HEIGHT, GAME_WIDTH);
 let lastTime = 0;
 
+// plaaceholder data
+let mockData = ['moveRight()', 'moveRight()', 'moveRight()']
+player.start(mockData)
+
 function gameLoop(timestamp) {
   let deltaTime = timestamp - lastTime;
   lastTime = timestamp;
@@ -21,5 +25,14 @@ function gameLoop(timestamp) {
 
   requestAnimationFrame(gameLoop);
 }
-let input = [player.moveRight(), player.moveRight(), player.moveRight()];
+//let input = [player.moveRight(), player.moveRight(), player.moveRight()];
 gameLoop();
+
+// userInputs = [moveRight,...]
+// counter = 0;
+// setInterval(() => {
+//   userInputs[counter]
+//   counter++
+
+//   if (counter === userInputs.length) { clearInterval() }
+// })

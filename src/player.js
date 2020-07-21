@@ -35,4 +35,14 @@ export default class Player {
     }, this.time);
     this.time += 1000;
   }
+
+  // placeholder function
+  start(mockData) {
+    let moveCounter = 0;
+    setInterval(() => {
+      console.log(moveCounter)
+      moveCounter++
+      if (moveCounter > mockData.length) clearInterval(start);
+    }, 1000)
+  }
 }
