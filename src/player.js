@@ -36,7 +36,7 @@ export default class Player {
   update(deltaTime) {
     if (!deltaTime) return;
 
-    console.log(this.position.x)
+    //console.log(this.position.x)
 
     this.position.x +=  this.vel.x;
     this.vel.x *= this.friction;

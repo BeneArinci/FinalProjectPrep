@@ -1,5 +1,10 @@
 import Player from "./player.js";
+import Input from './input.js';
 
+let btnEnterMove = document.getElementById("enter");
+let userInput = document.getElementById("userinput")
+let list = document.querySelector("ul")
+let btnDeleteMoves = document.getElementById("delete");
 let canvas = document.getElementById("gameArea");
 let ctx = canvas.getContext("2d");
 
@@ -13,6 +18,7 @@ canvas.width = GAME_WIDTH;
 
 
 let player = new Player(GAME_HEIGHT, GAME_WIDTH);
+let input = new Input()
 
 // placeholder data
 let mockData = [
@@ -41,3 +47,23 @@ function gameLoop(timestamp) {
 }
 
 gameLoop();
+
+btnEnterMove.addEventListener("click", function(){
+
+  if (userInput.value === "player.moveRight()") {
+    input.addInput("player.moveRight()")
+    var li = document.createElement("li")
+    li.appendChild(document.createTextNode(userInput.value))
+    list.appendChild(li)
+    console.log(input);
+    userInput.value = ""
+  } else {
+    alert("Wrong move, try again")
+  }
+})
+
+btnDeleteMoves.addEventListener("click", function(){
+  input.restore()
+  list.innerHTML = '';
+  console.log(input.inputs)
+});
