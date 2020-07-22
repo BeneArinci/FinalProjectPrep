@@ -7,6 +7,7 @@ let list = document.querySelector("ul")
 let btnDeleteMoves = document.getElementById("delete");
 let canvas = document.getElementById("gameArea");
 let ctx = canvas.getContext("2d");
+let btnPlay = document.getElementById("play")
 
 // define game area size
 const GAME_HEIGHT = 600;
@@ -21,17 +22,17 @@ let player = new Player(GAME_HEIGHT, GAME_WIDTH);
 let input = new Input()
 
 // placeholder data
-let mockData = [
-  "player.moveRight()",
-  "player.moveRight()",
-  "player.moveRight()",
-  "player.moveLeft()",
-  "player.moveLeft()",
-  "player.moveLeft()",
-  "player.moveRight()"
-];
+// let mockData = [
+//   "player.moveRight()",
+//   "player.moveRight()",
+//   "player.moveRight()",
+//   "player.moveLeft()",
+//   "player.moveLeft()",
+//   "player.moveLeft()",
+//   "player.moveRight()"
+// ];
 
-player.start(mockData);
+// player.start(mockData);
 
 let lastTime = 0;
 
@@ -66,4 +67,8 @@ btnDeleteMoves.addEventListener("click", function(){
   input.restore()
   list.innerHTML = '';
   console.log(input.inputs)
+});
+
+btnPlay.addEventListener("click", function(){
+  player.start(input.inputs)
 });
