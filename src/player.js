@@ -12,7 +12,7 @@ export default class Player {
       y: this.gameHeight - this.height,
     };
     //movement value
-    this.movement = {
+    this.moveIncrement = {
       x: 30,
       y: 30,
     };
@@ -21,11 +21,12 @@ export default class Player {
       x: 0,
       y: 0
     }
-    
     // speed
     this.speed = 10;
     // friction
-    this.friction = 1 - (this.speed/this.movement.x)
+    this.friction = 1 - (this.speed/this.moveIncrement.x)
+    // move interval (ms)
+    this.moveInterval = 1000
   }
 
   draw(ctx) {
@@ -58,13 +59,13 @@ export default class Player {
   start(mockData) {
     let i = 0;
     let interval = setInterval(() => {
-      this._loop(mockData[i]);
+      this._stringToFunction(mockData[i]);
       i++;
       if (i === mockData.length) clearInterval(interval);
-    }, 1000);
+    }, this.moveInterval);
   }
 
-  _loop(input) {
+  _stringToFunction(input) {
     switch (input) {
       case "player.moveRight()":
         this.moveRight();
