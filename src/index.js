@@ -49,27 +49,29 @@ function gameLoop(timestamp) {
 
 gameLoop();
 
-btnEnterMove.addEventListener("click", function(){
+// btnEnterMove.addEventListener("click", function(){
+//
+//   if (userInput.value === "player.moveRight()" || userInput.value === "player.moveLeft()") {
+//     input.addInput(userInput.value)
+//     var li = document.createElement("li")
+//     li.appendChild(document.createTextNode(userInput.value))
+//     list.appendChild(li)
+//     console.log(input);
+//     userInput.value = ""
+//   } else {
+//     alert("Wrong move, try again")
+//     userInput.value = ""
+//   }
+// })
 
-  if (userInput.value === "player.moveRight()" || userInput.value === "player.moveLeft()") {
-    input.addInput(userInput.value)
-    var li = document.createElement("li")
-    li.appendChild(document.createTextNode(userInput.value))
-    list.appendChild(li)
-    console.log(input);
-    userInput.value = ""
-  } else {
-    alert("Wrong move, try again")
-    userInput.value = ""
-  }
-})
-
-btnDeleteMoves.addEventListener("click", function(){
-  input.restore()
-  list.innerHTML = '';
-  console.log(input.inputs)
-});
+// btnDeleteMoves.addEventListener("click", function(){
+//   input.restore()
+//   list.innerHTML = '';
+//   console.log(input.inputs)
+// });
 
 btnPlay.addEventListener("click", function(){
-  player.start(input.inputs)
+  let test = userInput.value.split("\n")
+  console.log(test);
+  // player.start(input.inputs)
 });
