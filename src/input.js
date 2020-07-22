@@ -4,12 +4,12 @@ export default class Input {
 
   };
 
-  addInput(value){
-    this.inputs.push(value)
-  };
-
-  restore(){
-    this.inputs = [];
-  };
+  // addInput(value){
+  //   this.inputs.push(value)
+  // };
+  //
+  // restore(){
+  //   this.inputs = [];
+  // };
 
 }

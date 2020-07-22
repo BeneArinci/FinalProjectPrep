@@ -72,6 +72,6 @@ gameLoop();
 
 btnPlay.addEventListener("click", function(){
   let test = userInput.value.split("\n")
-  console.log(test);
-  // player.start(input.inputs)
+  // console.log(test);
+  player.start(test)
 });
