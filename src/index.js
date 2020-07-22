@@ -51,8 +51,8 @@ gameLoop();
 
 btnEnterMove.addEventListener("click", function(){
 
-  if (userInput.value === "player.moveRight()") {
-    input.addInput("player.moveRight()")
+  if (userInput.value === "player.moveRight()" || userInput.value === "player.moveLeft()") {
+    input.addInput(userInput.value)
     var li = document.createElement("li")
     li.appendChild(document.createTextNode(userInput.value))
     list.appendChild(li)
@@ -60,6 +60,7 @@ btnEnterMove.addEventListener("click", function(){
     userInput.value = ""
   } else {
     alert("Wrong move, try again")
+    userInput.value = ""
   }
 })
 
