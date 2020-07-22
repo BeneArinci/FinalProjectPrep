@@ -19,6 +19,7 @@ let mockData = [
   "player.moveLeft()",
   "player.moveLeft()",
   "player.moveLeft()",
+  "player.moveRight()"
 ];
 player.start(mockData);
 

@@ -24,6 +24,8 @@ export default class Player {
     
     // speed
     this.speed = 10;
+    // friction
+    this.friction = 1 - (this.speed/this.movement.x)
   }
 
   draw(ctx) {
@@ -32,8 +34,14 @@ export default class Player {
 
   update(deltaTime) {
     if (!deltaTime) return;
+
+    console.log(this.position.x)
+
     this.position.x +=  this.vel.x;
-    this.vel.x *= 0.65;
+    this.vel.x *= this.friction;
+    // can add a final position object that gets updated in the moveRight/Left function
+    // if block to check if you are in final position
+    // if true then set vel = 0
   }
 
   moveRight() {
